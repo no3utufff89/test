@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Braver - Производство полуприцепов</title>
         <link rel="stylesheet" href="css/index.min.css" />
+        <script src="
+        https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.js
+        "></script>
 
         <script type="module" src="js/index.min.js"></script>
     </head>
@@ -15,9 +18,9 @@
             <section class="section product">
                 <div class="product__header">
                     <div class="container">
-                        <div class="product__slider-wrapper">
-                            <ul class="product-slider">
-                                <li class="product-slider__item">
+                        <div class="product__slider-wrapper swiper">
+                            <ul class="product-slider swiper-wrapper">
+                                <li class="product-slider__item swiper-slide">
                                     <picture>
                                         <source
                                             srcset="img/product-image_01.avif"
@@ -50,7 +53,7 @@
                                         />
                                     </picture>
                                 </li>
-                                <li class="product-slider__item">
+                                <li class="product-slider__item swiper-slide">
                                     <picture>
                                         <source
                                             srcset="img/product-image_01.avif"
