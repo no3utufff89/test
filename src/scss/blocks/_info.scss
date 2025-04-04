@@ -1,0 +1,169 @@
+.info {
+}
+.info-list {
+    &__item {
+    }
+}
+.info-item {
+    display: grid;
+    grid-template-columns: 33px auto 32px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 21px;
+    padding-bottom: 21px;
+
+    @include laptop {
+        grid-template-columns: 212px auto 43px;
+        padding-top: 31px;
+        padding-bottom: 31px;
+    }
+    @include desktop {
+        grid-template-columns: 264px auto 43px;
+    }
+
+    &__header {
+        display: grid;
+        grid-template-columns: 33px auto 32px;
+        align-items: center;
+        grid-column: 1/4;
+        grid-row: 1/2;
+        margin-bottom: 5px;
+        cursor: pointer;
+        &:hover {
+            .info-item__icon {
+                background-color: $black;
+                & > svg {
+                    color: $white;
+                    transform: rotate(0);
+                }
+            }
+        }
+        @include laptop {
+            grid-template-columns: 212px auto 43px;
+        }
+        @include desktop {
+            grid-template-columns: 264px auto 43px;
+        }
+    }
+    &__content {
+        grid-column: 2/3;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        height: 0;
+        overflow: hidden;
+        transition: $transition;
+        @include laptop {
+            max-width: 527px;
+        }
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $black;
+        justify-self: self-start;
+        grid-column: 2/3;
+        @include laptop {
+            font-size: 30px;
+        }
+        @include desktop {
+            font-size: 36px;
+        }
+    }
+    &__desc {
+        font-size: 16px;
+        color: #7b7b7b;
+        font-weight: 400;
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+    &__icon {
+        border-radius: $round-small;
+        width: 32px;
+        height: 32px;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: $transition;
+        @include laptop {
+            width: 43px;
+            height: 43px;
+        }
+        & > svg {
+            color: $black;
+            width: 10px;
+            height: 10px;
+            transform: rotate(90deg);
+            transition: $transition;
+            @include laptop {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+    &_active > &__header > &__icon {
+        background-color: $black;
+        & > svg {
+            color: $white;
+            transform: rotate(0);
+        }
+    }
+    &_active > &__header {
+        &:hover {
+            .info-item__icon {
+                background-color: #f4f4f4;
+            }
+            svg {
+                color: $black;
+                transform: rotate(90deg);
+            }
+        }
+    }
+    &_active > &__content {
+        height: auto;
+    }
+}
+.number {
+    grid-column: 1/2;
+    &__text {
+        font-weight: 400;
+        font-size: 20px;
+        color: #7b7b7b;
+        @include laptop {
+            font-size: 28px;
+        }
+    }
+}
+.delivery-item {
+    &__title {
+        color: $black;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 90%;
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+}
+.delivery-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: relative;
+    list-style: disc;
+    padding-left: 18px;
+    &__title {
+    }
+    &__item {
+        font-size: 16px;
+        font-weight: 400;
+        color: #7b7b7b;
+        position: relative;
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+}

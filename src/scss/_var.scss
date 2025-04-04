@@ -1,0 +1,41 @@
+//default colours
+$black: #202020;
+$white: #fff;
+$dark-gray: #ffffff1a;
+$light-gray: #f4f4f4;
+
+//layout rounds
+$round-small: 8px;
+$round-full: 50%;
+
+//Media queries
+$tablet: 600px;
+$laptop: 900px;
+$desktop: 1500px;
+$transition: 0.3s ease-in-out;
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin font($name, $weight) {
+    font: {
+        family: $name;
+        weight: $weight;
+        display: swap;
+    }
+    src: url('../assets/fonts/#{ $name }-#{ $weight }.woff2') format('woff2');
+}

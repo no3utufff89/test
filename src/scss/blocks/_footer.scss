@@ -1,0 +1,379 @@
+.footer {
+    background-color: $black;
+
+    padding-top: 27px;
+    padding-bottom: 20px;
+    & > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include laptop {
+            grid-template-columns: calc(100% - 625px);
+        }
+    }
+
+    &__attention-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff66;
+    }
+
+    &__policy,
+    &__company-name,
+    &__creator {
+        color: #ffffff66;
+        font-size: 14px;
+        font-weight: 500;
+        display: block;
+        @include laptop {
+            font-size: 16px;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+    &__creator {
+        @include laptop {
+            order: -1;
+            margin-right: auto;
+        }
+    }
+    &__company-name {
+        @include laptop {
+            order: 1;
+            margin-right: 91px;
+        }
+    }
+    &__policy {
+        @include laptop {
+            order: 2;
+            margin-right: 165px;
+        }
+        @include desktop {
+            margin-right: 237px;
+        }
+    }
+    &__logo-link {
+        grid-column: 1/3;
+        grid-row: 1/2;
+
+        justify-content: center;
+        margin-bottom: 20px;
+        @include laptop {
+            grid-column: 1/2;
+            justify-self: self-start;
+            margin-bottom: 16px;
+        }
+    }
+    &__search-form {
+        margin-bottom: 10px;
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    &__callback-btn {
+        width: 100%;
+        margin-bottom: 30px;
+        grid-column: 1/3;
+        grid-row: 3/4;
+        @include laptop {
+            max-width: 202px;
+            margin-bottom: 0;
+            grid-column: 4/5;
+            justify-self: end;
+
+            grid-row: 1/2;
+            max-height: 46px;
+        }
+        @include desktop {
+            max-width: 243px;
+        }
+    }
+    &__links-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        grid-column: 1/3;
+        grid-row: 4/5;
+        @include laptop {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+            grid-column: 2/3;
+            grid-row: 1/5;
+            margin-bottom: 0;
+        }
+    }
+    &__menu-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, max-content);
+        grid-auto-flow: column;
+        margin-bottom: 30px;
+        grid-column: 1/3;
+        grid-row: 5/6;
+        @include laptop {
+            grid-template-columns: 1fr;
+            grid-auto-flow: row;
+            grid-column: 3/4;
+            grid-row: 1/5;
+            margin-bottom: 0;
+        }
+    }
+    &__rating {
+        margin-bottom: 20px;
+        grid-row: 6/7;
+        grid-column: 1/3;
+        @include laptop {
+            grid-row: 4/5;
+            margin-bottom: 59px;
+        }
+    }
+    &__social-list {
+        grid-column: 1/2;
+        grid-row: 7/8;
+        @include laptop {
+            grid-row: 4/5;
+            align-self: flex-end;
+        }
+    }
+    &__lang-checkbox {
+        grid-column: 2/3;
+        grid-row: 7/8;
+        justify-self: end;
+        align-self: center;
+        @include laptop {
+            grid-row: 4/5;
+            justify-self: end;
+            grid-column: 3/5;
+            align-self: flex-end;
+        }
+    }
+    &__attention-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff66;
+        grid-row: 8/9;
+        grid-column: 1/3;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        @include laptop {
+            font-size: 16px;
+            padding-top: 0;
+            justify-self: end;
+            grid-column: 1/5;
+            margin-bottom: 0;
+            grid-row: 5/6;
+            padding-top: 16px;
+            align-self: self-start;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+    &__company-icon {
+        grid-row: 9/10;
+        grid-column: 1/3;
+        margin-bottom: 20px;
+        @include laptop {
+            grid-column: 1 / 5;
+            grid-row: 5 / 6;
+            margin-bottom: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        & > svg {
+            width: 100%;
+            height: 42px;
+            color: #ffffff1a;
+            @include laptop {
+                height: 146px;
+            }
+            @include desktop {
+                height: 180px;
+            }
+        }
+    }
+    &__bottom-line {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: 20px;
+        grid-row: 10/11;
+        grid-column: 1/3;
+        @include laptop {
+            grid-column: 1 / 5;
+        }
+    }
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    @include laptop {
+        row-gap: 16px;
+    }
+    @include desktop {
+        row-gap: 20px;
+    }
+    &__title {
+        font-size: 14px;
+        color: #ffffffb3;
+        line-height: 90%;
+        @include laptop {
+            font-size: 16px;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+    &__link,
+    &__time,
+    &__address {
+        font-size: 14px;
+        color: $white;
+        display: block;
+
+        @include laptop {
+            font-size: 16px;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+    &__address {
+        max-width: 180px;
+
+        @include laptop {
+            max-width: 186px;
+        }
+        & > span {
+            @include laptop {
+                display: block;
+            }
+        }
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+}
+.categories {
+}
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    @include laptop {
+        row-gap: 16px;
+    }
+    @include desktop {
+        row-gap: 20px;
+    }
+    &__link {
+        color: #ffffffb3;
+        font-size: 14px;
+        display: block;
+        line-height: 90%;
+        transition: $transition;
+        &:hover {
+            color: #bebabab3;
+        }
+        @include laptop {
+            font-size: 16px;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+}
+
+.rating {
+    display: grid;
+    grid-template-columns: 64px auto;
+    column-gap: 20px;
+    row-gap: 10px;
+    padding: 10px;
+    background-color: #373737;
+    border-radius: $round-small;
+    align-items: center;
+    max-width: max-content;
+
+    &__common {
+        display: flex;
+        column-gap: 5px;
+    }
+    &__count {
+        font-size: 24px;
+        font-weight: 500;
+        color: $white;
+        @include desktop {
+            font-size: 32px;
+        }
+    }
+    &__image {
+        flex-shrink: 0;
+        width: 25px;
+        height: 25px;
+        @include desktop {
+            width: 33px;
+            height: 33px;
+        }
+    }
+    &__stars {
+        display: flex;
+        column-gap: 1px;
+    }
+    &__icon {
+        color: #7b7b7b;
+        width: 15px;
+        height: 15px;
+        @include laptop {
+            width: 19px;
+            height: 19px;
+        }
+        &_filled {
+            color: $white;
+        }
+    }
+    &__text {
+        font-size: 12px;
+        color: #ffffffb3;
+        grid-column: 1/3;
+        @include desktop {
+            font-size: 14px;
+        }
+    }
+}
+.social-list {
+    display: flex;
+    column-gap: 10px;
+    &__item {
+        background-color: #373737;
+        border-radius: $round-small;
+        width: 43px;
+        height: 43px;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+    }
+    &__icon {
+        color: $white;
+        &_vk {
+            width: 25px;
+            height: 14px;
+        }
+        &_tg {
+            width: 22px;
+            height: 18px;
+        }
+        &_wapp {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}

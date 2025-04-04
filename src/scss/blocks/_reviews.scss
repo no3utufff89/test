@@ -1,0 +1,87 @@
+.reviews {
+    padding-bottom: 60px;
+    &__title {
+        text-transform: uppercase;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__all-link {
+        font-weight: 500;
+        color: $black;
+        font-size: 16px;
+        line-height: 20px;
+        transition: $transition;
+        &:hover {
+            color: #7b7b7b;
+        }
+        @include desktop {
+            font-size: 18px;
+        }
+    }
+}
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    @include laptop {
+        flex-direction: row;
+        column-gap: 10px;
+    }
+    @include desktop {
+        margin-bottom: 30px;
+    }
+}
+.review {
+    padding: 12px;
+    display: flex;
+    column-gap: 10px;
+    background-color: #f4f4f4;
+    border-radius: $round-small;
+    width: 100%;
+    @include laptop {
+        width: calc((100% / 3) - 10px);
+        flex-grow: 1;
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        color: $black;
+    }
+    &__text {
+        font-size: 14px;
+        color: #7b7b7b;
+        line-height: 90%;
+        @include laptop {
+            font-size: 16px;
+        }
+    }
+    &__details-link {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    &__image {
+        border-radius: $round-small;
+        border: 2px solid transparent;
+        width: 61px;
+        height: 92px;
+        overflow: hidden;
+        flex-shrink: 0;
+        @include laptop {
+            width: 81px;
+            height: 123px;
+        }
+        & > img {
+            object-fit: cover;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}

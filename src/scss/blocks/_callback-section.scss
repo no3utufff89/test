@@ -1,0 +1,168 @@
+.callback-section {
+    padding-bottom: 60px;
+    & > .container {
+        @include laptop {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include desktop {
+            grid-template-columns: 790px auto;
+        }
+    }
+    &__header {
+        border-radius: $round-small;
+        overflow: hidden;
+        padding-top: 40px;
+        padding-bottom: 24px;
+        padding-left: 12px;
+        padding-right: 12px;
+        background-image: url(../../img/callback_bg.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        position: relative;
+        z-index: 1;
+        @include laptop {
+            padding-top: 56px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @include desktop {
+            padding-top: 80px;
+            padding-left: 30px;
+            padding-right: 30px;
+            row-gap: 20px;
+        }
+        &::before {
+            content: '';
+            background-color: #20202054;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+    &__title {
+        color: $white;
+        text-transform: uppercase;
+        max-width: 96%;
+    }
+    &__text {
+        font-size: 14px;
+        color: #ffffffcc;
+        max-width: 314px;
+        @include laptop {
+            font-size: 16px;
+            max-width: 420px;
+        }
+        @include desktop {
+            font-size: 18px;
+            max-width: 527px;
+        }
+    }
+    &__form {
+        padding: 12px;
+        background-color: #f4f4f4;
+        border-radius: $round-small;
+        @include laptop {
+            padding: 24px 48px;
+        }
+        @include desktop {
+            padding: 51px 94px;
+        }
+    }
+}
+.callback-form {
+    margin-bottom: 20px;
+    &__fieldset {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        margin-bottom: 20px;
+    }
+    &__input {
+        border-radius: $round-small;
+        background-color: $white;
+        padding: 12px;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 500;
+        color: $black;
+        border: 1px solid transparent;
+        outline: none;
+        @include desktop {
+            font-size: 18px;
+        }
+        &:focus {
+            border-color: $black;
+        }
+        &::placeholder {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+            color: #2020204d;
+            @include desktop {
+                font-size: 18px;
+            }
+        }
+    }
+    &__checkbox-custom {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        background-color: $white;
+        flex-shrink: 0;
+        position: relative;
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+        }
+        &::after {
+            content: '';
+            border-radius: $round-full;
+            background-color: $black;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+        }
+        &:checked::after {
+            opacity: 1;
+        }
+    }
+    &__label {
+        color: #7b7b7b;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        cursor: pointer;
+        @include laptop {
+            max-width: 360px;
+            font-size: 16px;
+        }
+        @include desktop {
+            font-size: 18px;
+            max-width: 500px;
+        }
+    }
+    &__link {
+        color: $black;
+    }
+}

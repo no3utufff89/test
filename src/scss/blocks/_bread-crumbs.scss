@@ -1,0 +1,49 @@
+.bread-crumbs {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    &__item {
+        &:not(:first-child):not(:last-child) {
+            display: none;
+            @include laptop {
+                display: block;
+            }
+        }
+        & > svg {
+            color: #20202066;
+            display: none;
+            @include laptop {
+                display: inline;
+            }
+        }
+        &:last-child > svg {
+            color: $black;
+        }
+        &:last-child a {
+            max-width: 252px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: initial;
+            display: -webkit-inline-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    }
+    &__devider {
+        display: flex;
+        align-items: center;
+        @include laptop {
+            display: none;
+        }
+    }
+    &__link {
+        color: #20202066;
+        font-size: 16px;
+        font-weight: 400;
+        &_active {
+            color: $black;
+        }
+    }
+}

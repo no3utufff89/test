@@ -1,0 +1,36 @@
+.header {
+    background-color: $black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include laptop {
+        margin-bottom: 10px;
+    }
+    @include desktop {
+        margin-bottom: 20px;
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__phone-link {
+        display: none;
+        @media screen and (min-width: 1200px) {
+            display: block;
+        }
+    }
+    &__callback-btn {
+        display: none;
+        @media screen and (min-width: 1200px) {
+            display: block;
+        }
+    }
+
+    &__controls {
+        display: none;
+        @include laptop {
+            display: flex;
+            column-gap: 5px;
+        }
+    }
+}

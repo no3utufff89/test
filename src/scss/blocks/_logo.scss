@@ -1,0 +1,22 @@
+.logo-link {
+    display: flex;
+    column-gap: 3px;
+    align-items: center;
+    &__image {
+        width: 69px;
+        height: 26px;
+        @include desktop {
+            width: 117px;
+            height: 44px;
+        }
+    }
+    &__text {
+        color: $white;
+        line-height: 90%;
+        font-size: 10px;
+        max-width: 68px;
+        @include desktop {
+            font-size: 12px;
+        }
+    }
+}

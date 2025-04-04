@@ -1,0 +1,88 @@
+.characteristics-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.custom-btn {
+    display: flex;
+    height: 46px;
+    width: 100%;
+    transition: $transition;
+    &:hover {
+        span {
+            background-color: $white;
+            color: $black;
+        }
+        svg {
+            color: $black;
+        }
+    }
+    &__text {
+        background-color: $black;
+        border-radius: $round-small;
+        height: 100%;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        transition: $transition;
+        &_variant {
+            background-color: #f4f4f4;
+            color: $black;
+        }
+    }
+    &__icon-box {
+        background-color: $black;
+        border-radius: $round-small;
+        width: 46px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition;
+        & > svg {
+            width: 16px;
+            height: 16px;
+            color: $white;
+            transition: $transition;
+        }
+        &_variant {
+            background-color: #f4f4f4;
+            & > svg {
+                color: $black;
+            }
+        }
+    }
+    &_variant {
+        &:hover {
+            .custom-btn__text {
+                background-color: #dbdbdb;
+                color: $black;
+            }
+            .custom-btn__icon-box {
+                background-color: #dbdbdb;
+            }
+            svg {
+                color: $white;
+            }
+        }
+    }
+}
+.request-btn {
+    max-width: 413px;
+    &_variant {
+        &:hover {
+            .custom-btn__text {
+                background-color: #dbdbdb;
+            }
+            .custom-btn__icon-box {
+                background-color: #dbdbdb;
+            }
+            svg {
+                color: $black;
+            }
+        }
+    }
+}
